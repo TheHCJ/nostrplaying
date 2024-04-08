@@ -207,7 +207,7 @@ func postNowPlaying(name string, endpoint string) {
 	fmt.Printf("Content: %v\n", endpoint)
 
 	// publish the event to these relays
-	for _, url := range []string{"wss://relay.damus.io", "wss://nos.lol", "wss://nostr.wine", "wss://eden.nostr.land", "wss://relay.snort.social", "wss://blastr.f7z.xyz", "wss://relay.primal.net", "wss://relayable.org"} {
+	for _, url := range []string{"wss://relay.damus.io", "wss://nos.lol", "wss://relay.snort.social", "wss://relay.primal.net"} {
 		relay, e := nostr.RelayConnect(context.Background(), url)
 		if e != nil {
 			fmt.Println(e)
